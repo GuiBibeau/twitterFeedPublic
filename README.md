@@ -37,3 +37,9 @@ run the back and front end in parallel
 ```
 npm run dev
 ```
+
+## To do
+
+1- change new tweet animations
+2- add ability to select hashtag
+3- change looks (low priority)
