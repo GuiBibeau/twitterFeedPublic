@@ -2,6 +2,9 @@
 
 this project was a coding challenge to create a board of recent tweets. I decided to use the twitter streaming API to make a twitter feed about javascript instead
 
+![alt  text](https://github.com/gbibeaul/twitter-challenge/blob/master/demo.gif)
+
+
 ## Stack used
 
 the back end is a express node server connecting to the twitter streaming API
