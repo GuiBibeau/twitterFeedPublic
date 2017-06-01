@@ -1,34 +1,32 @@
-# Twitter front + back challenge!
+# intro
 
-For this challenge, we're going to implement a tiny twitter dashboard using HTML, CSS, JavaScript, NodeJS and the Twitter API.
+this project was a coding challenge to create a board of recent tweets. I decided to use the twitter streaming API to make a twitter feed about javascript instead
 
-Here is an example of what your project could look like once you're finished. Please note that this is only meant to give you ideas if you have none. Don't hesitate to go crazy :)
+## Stack used
 
-![example twitter challenge](http://i.imgur.com/ZxLcNmB.png)
+the back end is a express node server connecting to the twitter streaming API
+the node 'twitter' module was used for this purpose. I've used socket.IO on the back to connect to the clients.
 
-## Operational instructions
-To complete this challenge, start by forking this repo to your own GitHub account. Then, code your web app using your favourite environment. Once you are done, please submit your challenge as a pull request here.
+The front end is a react application that will display at all time the 5 most recent tweets. socket.io-client is used to connect to the server and keep the connection alive.
 
-Apart from the general requirement of producing a web app with AJAX, you are not required to use any particular framework, nor are you required to use a framework at all. You can do everything with `fetch` and `innerHTML` or go crazy with a React/Redux or AngularJS app.
+## Installation
 
-:warning: **NOTE:** The Twitter API does not work using AJAX because it does not allow cross-domain requests. This is why you have to setup a NodeJS proxy server that will handle making the calls to twitter.
+clone this repo
+```
+git clone git@github.com:gbibeaul/twitter-challenge.git
 
-## Part 1
-Using the framework of your choice, create a small web page with three columns. Each column will contain the latest 10 tweets from these accounts: @decodemtl, @reactjs, @nodejs.
+```
+cd into the project folder
+```
+npm install
+```
 
-Each tweet in each column should have the text of the tweet and the date/time of the tweet as "x y ago" like "10 minutes ago" or "1 month ago". In addition to that, clicking on the whole tweet should link to that tweet's page on twitter.com.
-
-Finally, make sure that your columns are flexible so that they will work on any screen width. If the screen size is too small, maybe you don't want all three columns to display on the same row.
-
-## Part 2
-Keeping the same web app you created in part 1, give a way for the user to change the layout of the columns. Use HTML5 Local Storage to keep the settings across page loads.
-
-For this exercise, you will have more latitude than for the first part. Here are a few things you could do for your edit layout functionality:
-
-* Let the user change the order of the columns
-* Let the user change the number of tweets from the default of 10
-* Let the user change the twitter accounts that will be displayed
-* Let the user add/remove twitter accounts from the list
-* Whatever else you can imagine and have the time and patience to do
-
-In addition to giving you the option of what to let the user configure, we are also giving you the choice of how to make the configuration. You can either do it in-place with drag/drop and text fields, or have a separate user interface to manage the layout.
+inside server.js include your twitter api keys
+```
+var client = new Twitter({
+  consumer_key: process.env.TWITTER_CONSUMER_KEY || 'ZWW2k1muXdiCuwhzqN9RvORmV',
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET || 'K78xOcKfImZuNOQIPCt8qc7Iz096apPxbBfnTfQ2D1cRSSlMZe',
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY || '378169226-ZqXLg4z0ouFvosEdmnqk28wlBowiwb78Y0uZ6upu',
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET  || 'Gbi9Fev9hyr6088kUq35kKxPQjisuDADLITDettsEFXV7'
+})
+```

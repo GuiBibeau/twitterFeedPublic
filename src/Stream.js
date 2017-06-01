@@ -26,7 +26,7 @@ class Stream extends Component {
           {this.state.tweets.map((item,i) => <li className="tweet" key={i}>{item}</li>)}
           </ul>
           <header>
-            <h2>Javascript</h2>
+            <h2>JavaScript</h2>
           </header>
         </div>
       </article>
