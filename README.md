@@ -24,9 +24,13 @@ npm install
 inside server.js include your twitter api keys
 ```
 var client = new Twitter({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY || 'ZWW2k1muXdiCuwhzqN9RvORmV',
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET || 'K78xOcKfImZuNOQIPCt8qc7Iz096apPxbBfnTfQ2D1cRSSlMZe',
-  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY || '378169226-ZqXLg4z0ouFvosEdmnqk28wlBowiwb78Y0uZ6upu',
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET  || 'Gbi9Fev9hyr6088kUq35kKxPQjisuDADLITDettsEFXV7'
+  consumer_key: process.env.TWITTER_CONSUMER_KEY || 'key goes here between brackets',
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET || 'key goes here between brackets',
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY || 'key goes here between brackets',
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET  || 'key goes here between brackets'
 })
+```
+run the back and front end in parallel
+```
+npm run dev
 ```
