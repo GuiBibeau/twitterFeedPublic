@@ -5,10 +5,11 @@ const io = require('socket.io')(http);
 const Twitter = require('twitter');
 
 var client = new Twitter({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+  consumer_key:  'ZWW2k1muXdiCuwhzqN9RvORmV',
+  consumer_secret:  'K78xOcKfImZuNOQIPCt8qc7Iz096apPxbBfnTfQ2D1cRSSlMZe',
+  access_token_key:  '378169226-ZqXLg4z0ouFvosEdmnqk28wlBowiwb78Y0uZ6upu',
+  access_token_secret: 'Gbi9Fev9hyr6088kUq35kKxPQjisuDADLITDettsEFXV7'
+})
 //
 var tweets = []
 var stream = client.stream('statuses/filter', {track: 'javascript'});
@@ -30,17 +31,4 @@ io.on('connection', (socket) => {
 
 http.listen(process.env.PORT || 3000, function(){
   console.log('server has started');
-});
-
-app.all('*', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
-     // intercept OPTIONS method
-    if ('OPTIONS' == req.method) {
-      res.send(200);
-    }
-    else {
-      next();
-    }
 });
