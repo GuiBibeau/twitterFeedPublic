@@ -11,9 +11,9 @@ class Stream extends Component {
   componentDidMount = () => {
     socket.emit('Connected', 'Connection from front')
     socket.on('tweets', newTweet => {
-      let tweets = this.state.tweets.reverse()
-      tweets.length >= 5 ? tweets.shift() : tweets
-      tweets.push(newTweet);
+      let tweets = this.state.tweets
+      tweets.length >= 5 ? tweets.pop() : null
+      tweets.unshift(newTweet);
       this.setState({ tweets : tweets})
       });
   }
@@ -26,7 +26,7 @@ class Stream extends Component {
           {this.state.tweets.map((item,i) => <li className="tweet" key={i}>{item}</li>)}
           </ul>
           <header>
-            <h2>JavaScript</h2>
+            <h2>#JavaScript</h2>
           </header>
         </div>
       </article>

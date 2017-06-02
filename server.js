@@ -1,4 +1,3 @@
-const { createStore } = require('redux')
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
@@ -26,7 +25,7 @@ stream.on('error', function(error) {
 
 
 io.on('connection', (socket) => {
-  socket.on('Connected', (msg) => { console.log('this was sent from the fron' + msg)})
+  socket.on('Connected', (msg) => { console.log('this was sent from the front' + msg)})
 });
 
 http.listen(process.env.PORT || 3000, function(){
