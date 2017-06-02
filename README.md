@@ -2,6 +2,9 @@
 
 this project was a coding challenge to create a board of recent tweets. I decided to use the twitter streaming API to make a twitter feed about javascript instead
 
+a live version of the site is hosted at
+http://decorator-mole-16884.netlify.com/
+
 ![alt  text](https://github.com/gbibeaul/twitter-challenge/blob/master/demo.gif)
 
 
